@@ -5,12 +5,12 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "dev:prod": "cross-env NODE_ENV=production ts-node-dev --respawn --transpile-only src/server.ts",
-    "build": "tsc",
     "build:frontend": "cd ../frontend && npm install && npm run build",
     "build:all": "npm run build:frontend && npm run build",
-    "start": "cross-env NODE_ENV=production node dist/server.js",
     "start:dev": "cross-env NODE_ENV=production ts-node-dev --respawn --transpile-only src/server.ts",
     "lint": "eslint \"src/**/*.{ts,tsx}\" --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\""
